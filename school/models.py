@@ -37,7 +37,7 @@ class Tutor(models.Model):
     school = models.BooleanField('Работает в школе', db_index=True, blank=True, null=True, default=False)
 
     class Meta:
-        ordering = ['l_name', 'city']
+        ordering = ['l_name', 'office']
         verbose_name = 'Преподаватель'
         verbose_name_plural = 'Преподаватели'
 
