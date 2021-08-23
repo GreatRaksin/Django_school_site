@@ -32,13 +32,13 @@ class Tutor(models.Model):
     img_link = models.URLField('Ссылка на фото', max_length=128, db_index=True, blank=True, null=True)
     avatar = models.FileField('Логотип', blank=True, default='site/images/tutor_default.jpg', upload_to='tutors')
     link = models.CharField('Ссылка на профиль', max_length=128, blank=True, null=True)
-    office = models.ForeignKey('Offices', verbose_name='Филиал', null=True, on_delete=models.CASCADE)
+    office = models.ManyToManyField('Offices', verbose_name='Филиал', null=True)
     subject = models.ManyToManyField('Subjects', related_name='Предметы')
     school = models.BooleanField('Работает в школе', db_index=True, blank=True, null=True, default=False)
     is_admin = models.BooleanField('Администрация школы', db_index=True, blank=True, null=True, default=False)
 
     class Meta:
-        ordering = ['l_name', 'office']
+        ordering = ['l_name']
         verbose_name = 'Преподаватель'
         verbose_name_plural = 'Преподаватели'
 
@@ -47,6 +47,7 @@ class Tutor(models.Model):
 
 class Offices(models.Model):
     name = models.CharField('Филиал', max_length=100, blank=True)
+    map_url = models.URLField('Ссылка на карту', max_length=128, blank=True, null=True)
 
     class Meta:
         ordering = ['name',]

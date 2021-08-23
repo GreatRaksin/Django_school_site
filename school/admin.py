@@ -8,7 +8,7 @@ class HeadAdmin(admin.ModelAdmin):
     list_display = ('title', 'image',)
 
 class TutorAdmin(admin.ModelAdmin):
-    list_display = ('l_name', 'f_name', 'office', 'school', 'is_admin',)
+    list_display = ('l_name', 'f_name', 'school', 'is_admin',)
     list_filter = ('office', 'subject', 'school', 'is_admin',)
     formfield_overrides = {
             models.ManyToManyField: {'widget': CheckboxSelectMultiple},
