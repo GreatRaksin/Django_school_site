@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from tinymce.models import HTMLField
 from django.utils import timezone
 import os
 
@@ -74,7 +75,7 @@ class Features(models.Model):
                             default='static/site/images/tutor_default.jpg',
                             upload_to='icons_features')
     title = models.CharField('Фишка', max_length=100, blank=True, null=True, db_index=True)
-    text = models.TextField('Текст фишки', max_length=300, blank=True, null=True, db_index=True)
+    text = HTMLField('Текст фишки', max_length=10000, blank=True, null=True, db_index=True)
     is_active = models.BooleanField('Активно', db_index=True, blank=True, null=True, default=False)
 
     class Meta:

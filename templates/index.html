@@ -34,7 +34,7 @@
                         <div class="card border-light mb-3 col-lg-3 col-md-3 col-sm-5">
                             <div class="card-header text-danger text-center"><b>{{ feature.title }}</b></div>
                             <div class="card-body">
-                                <p class="card-text">{{ feature.text }}</p>
+                                <p>{{ feature.text|safe }}</p>
                             </div>
                         </div>
                     {% endfor %}
