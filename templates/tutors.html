@@ -4,11 +4,11 @@
 {% block content %}
 
     <!-- ***** Features Item Start ***** -->
-    <section class="section" id="tutors" style="background-color: #eaeaea">
+    <section class="section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
+                    <div class="section-heading" id="tutors">
                         <h2>Наши <em>Преподаватели</em></h2>
                         <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
                         <p>Мы собрали команду профессионалов.</p>
@@ -28,7 +28,7 @@
             </div>
             <div class="row justify-content-between">
                 {% for tutor in tutors %}
-                    <div class="card mb-4 p-2 col-lg-3 col-md-3 col-sm-5">
+                    <div class="card mb-4 p-2 col-lg-3 col-md-3 col-sm-5 d-block text-center">
                         {% if tutor.img_link %}
                             <img src="{{ tutor.img_link }}" alt="{{ tutor.l_name }}_аватар">
                         {% else %}

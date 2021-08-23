@@ -9,6 +9,9 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
           rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
     {% if title %}
         <title>{{ title }} | 100 баллов</title>
@@ -53,7 +56,7 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{% url 'index' %}#top" class="active">Главная</a></li>
                         <li class="scroll-to-section"><a href="{% url 'index' %}#features">О нас</a></li>
-                        <li class="scroll-to-section"><a href="{% url 'tutors' %}">Преподаватели</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'tutors' %}#tutors">Преподаватели</a></li>
                         <li class="scroll-to-section"><a href="{% url 'index' %}#contact-us">Контакты</a></li>
                         <li class="main-button"><a href="#">Sign Up</a></li>
                     </ul>
@@ -77,7 +80,7 @@
             <div class="col-lg-12">
                 <p>Copyright &copy; 2021 100ballov.by
 
-                   - Designed by Architect
+                    - Designed by Architect
                 </p>
 
                 <!-- You shall support us a little via PayPal to info@templatemo.com -->
