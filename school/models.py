@@ -30,7 +30,7 @@ class Tutor(models.Model):
     f_name = models.CharField('Имя', max_length=100, default='', blank=True)
     fath_name = models.CharField('Отчество', max_length=100, default='', blank=True, null=True)
     img_link = models.URLField('Ссылка на фото', max_length=128, db_index=True, blank=True, null=True)
-    avatar = models.FileField('Логотип', blank=True, default='site/images/tutor_default.jpg', upload_to='tutors')
+    avatar = models.FileField('Логотип', blank=True, default='https://www.100ballov.by/media/django-summernote/2021-08-23/7043d218-16f1-4d13-8152-e4b85320bc78.png', upload_to='tutors')
     link = models.CharField('Ссылка на профиль', max_length=128, blank=True, null=True)
     office = models.ManyToManyField('Offices', verbose_name='Филиал', null=True)
     subject = models.ManyToManyField('Subjects', related_name='Предметы')

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- ***** Features Item Start ***** -->
+    <section class="section" id="tutors">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Наши <em>Преподаватели</em></h2>
+                        <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
+                        <p>Мы собрали команду профессионалов.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="features-items">
+
+                        {% for tutor in tutors %}
+                            <li class="feature-item">
+                                <div class="left-icon">
+                                    {% if tutor.img_link %}
+                                        <img src="{{ tutor.img_link }}" alt="{{ tutor.l_name }}_аватар">
+                                    {% elif tutor.avatar %}
+                                        <img src="{{ tutor.avatar }}" alt="{{ tutor.l_name }}_аватар">
+                                    {% else %}
+                                        <img src="https://www.100ballov.by/media/django-summernote/2021-08-23/7043d218-16f1-4d13-8152-e4b85320bc78.png" alt="{{ tutor.l_name }}_аватар">
+                                    {% endif %}
+                                </div>
+                                <div class="right-content">
+                                    <h4>{{ tutor.f_name }} {{ tutor.l_name }}</h4>
+                                    <p>{{ tutor.subject }}</p>
+                                    <a href="#" class="text-button">Узнать больше</a>
+                                </div>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
