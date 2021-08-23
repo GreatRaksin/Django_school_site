@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- ***** Main Banner Area Start ***** -->
@@ -35,7 +36,7 @@
                 <ul class="features-items">
                     <li class="feature-item">
                         <div class="left-icon">
-                            <img src="assets/images/features-first-icon.png" alt="First One">
+                            <img src="{% static 'site/images/features-first-icon.png' %}" alt="First One">
                         </div>
                         <div class="right-content">
                             <h4>Basic Fitness</h4>

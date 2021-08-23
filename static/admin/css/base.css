@@ -6,17 +6,17 @@
 
 /* VARIABLE DEFINITIONS */
 :root {
-  --primary: #79aec8;
-  --secondary: #417690;
-  --accent: #f5dd5d;
+  --primary: #636363;
+  --secondary: #545454;
+  --accent: #df1010;
   --primary-fg: #fff;
 
   --body-fg: #333;
-  --body-bg: #fff;
+  --body-bg: #a4a4a4;
   --body-quiet-color: #666;
   --body-loud-color: #000;
 
-  --header-color: #ffc;
+  --header-color: #ffcccc;
   --header-branding-color: var(--accent);
   --header-bg: var(--secondary);
   --header-link-color: var(--primary-fg);
@@ -25,9 +25,9 @@
   --breadcrumbs-link-fg: var(--body-bg);
   --breadcrumbs-bg: var(--primary);
 
-  --link-fg: #447e9b;
-  --link-hover-color: #036;
-  --link-selected-fg: #5b80b2;
+  --link-fg: #9b4444;
+  --link-hover-color: #660000;
+  --link-selected-fg: #b25b5b;
 
   --hairline-color: #e8e8e8;
   --border-color: #ccc;
@@ -44,9 +44,9 @@
 
   --button-fg: #fff;
   --button-bg: var(--primary);
-  --button-hover-bg: #609ab6;
+  --button-hover-bg: #b66060;
   --default-button-bg: var(--secondary);
-  --default-button-hover-bg: #205067;
+  --default-button-hover-bg: #672020;
   --close-button-bg: #888; /* Previously #bbb, contrast 1.92 */
   --close-button-hover-bg: #747474;
   --delete-button-bg: #ba2121;
@@ -59,20 +59,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #264b5d;
+    --primary: #636363;
     --primary-fg: #eee;
 
     --body-fg: #eeeeee;
-    --body-bg: #121212;
+    --body-bg: #434343;
     --body-quiet-color: #e0e0e0;
     --body-loud-color: #ffffff;
 
     --breadcrumbs-link-fg: #e0e0e0;
     --breadcrumbs-bg: var(--primary);
 
-    --link-fg: #81d4fa;
-    --link-hover-color: #4ac1f7;
-    --link-selected-fg: #6f94c6;
+    --link-fg: #fa8181;
+    --link-hover-color: #f74a4a;
+    --link-selected-fg: #c66f6f;
 
     --hairline-color: #272727;
     --border-color: #353535;
@@ -84,7 +84,7 @@
 
     --darkened-bg: #212121;
     --selected-bg: #1b1b1b;
-    --selected-row: #00363a;
+    --selected-row: #3a0000;
 
     --close-button-bg: #333333;
     --close-button-hover-bg: #666666;
