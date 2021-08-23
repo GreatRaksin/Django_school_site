@@ -6,6 +6,11 @@ class TutorSelectForm(forms.ModelForm):
         model = Tutor
         fields = ('office', 'subject')
 
+        widgets = {
+            'office': forms.Select(attrs={'class': 'form-select'}),
+            'subject': forms.Select(attrs={'class': 'form-select'}),
+        }
+
     def __init__(self, subject=None, city=None):
         super().__init__()
         if subject and city:

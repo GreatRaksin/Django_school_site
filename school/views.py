@@ -19,4 +19,4 @@ def tutors(request):
         tutors = Tutor.objects.filter(school=True)
 
     return render(request, 'tutors.html', {'form': form,
-                                          'tutors': tutors})
+                                           'tutors': tutors})
