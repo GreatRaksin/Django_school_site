@@ -8,7 +8,7 @@ class Head(models.Model):
     title = models.CharField('Title страницы', max_length=120, blank=True, default='100 баллов')
     title_on_image = models.CharField('Заголовок на главном фото', max_length=50, blank=True, default='100 баллов')
     logo = models.CharField('Лого', max_length=30, blank=True, default='Центр "100 баллов"')
-    image = models.FileField('Главное фото', blank=True, default='static/site/images/bg.jpg')
+    image = models.FileField('Главное фото', blank=True, default='site/images/bg.jpg')
 
     def image_preview(self):
         if self.image:
@@ -30,7 +30,7 @@ class Tutor(models.Model):
     f_name = models.CharField('Имя', max_length=100, default='', blank=True)
     fath_name = models.CharField('Отчество', max_length=100, default='', blank=True, null=True)
     img_link = models.URLField('Ссылка на фото', max_length=128, db_index=True, blank=True, null=True)
-    avatar = models.FileField('Логотип', blank=True, default='static/site/images/tutor_default.jpg', upload_to='tutors')
+    avatar = models.FileField('Логотип', blank=True, default='site/images/tutor_default.jpg', upload_to='tutors')
     link = models.CharField('Ссылка на профиль', max_length=128, blank=True, null=True)
     office = models.ForeignKey('Offices', verbose_name='Филиал', null=True, on_delete=models.CASCADE)
     subject = models.ManyToManyField('Subjects', related_name='Предметы')
