@@ -35,6 +35,7 @@ class Tutor(models.Model):
     office = models.ForeignKey('Offices', verbose_name='Филиал', null=True, on_delete=models.CASCADE)
     subject = models.ManyToManyField('Subjects', related_name='Предметы')
     school = models.BooleanField('Работает в школе', db_index=True, blank=True, null=True, default=False)
+    is_admin = models.BooleanField('Администрация школы', db_index=True, blank=True, null=True, default=False)
 
     class Meta:
         ordering = ['l_name', 'office']
