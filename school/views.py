@@ -10,11 +10,11 @@ def index(request):
 
 def tutors(request):
     form = TutorSelectForm()
-    town = request.GET.get('city')
+    town = request.GET.get('office')
     predm = request.GET.get('subject')
 
     if town and predm:
-        tutors = Tutor.objects.filter(city=town, subject=predm, school=True)
+        tutors = Tutor.objects.filter(office=town, subject=predm, school=True)
     else:
         tutors = Tutor.objects.filter(school=True)
 

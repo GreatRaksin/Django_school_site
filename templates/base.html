@@ -47,15 +47,14 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">Training<em> Studio</em></a>
+                    <a href="{% url 'index' %}" class="logo">100<em> Баллов</em></a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#features">About</a></li>
-                        <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                        <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                        <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'index' %}#top" class="active">Главная</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'index' %}#features">О нас</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'tutors' %}">Преподаватели</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'index' %}#contact-us">Контакты</a></li>
                         <li class="main-button"><a href="#">Sign Up</a></li>
                     </ul>
                     <a class='menu-trigger'>
@@ -76,9 +75,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; 2020 Training Studio
+                <p>Copyright &copy; 2021 100ballov.by
 
-                   - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a>
+                   - Designed by Architect
                 </p>
 
                 <!-- You shall support us a little via PayPal to info@templatemo.com -->
