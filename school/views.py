@@ -14,9 +14,9 @@ def tutors(request):
     predm = request.GET.get('subject')
 
     if town and predm:
-        tutors = Tutor.objects.filter(city=town, subject=predm)
+        tutors = Tutor.objects.filter(city=town, subject=predm, school=True)
     else:
-        tutors = Tutor.objects.all()
+        tutors = Tutor.objects.filter(school=True)
 
     return render(request, 'tutors.html', {'form': form,
                                           'tutors': tutors})

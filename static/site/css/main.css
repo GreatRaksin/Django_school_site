@@ -671,12 +671,13 @@ features
 
 .feature-item {
   display: inline-block;
+  width: 50%;
   margin-bottom: 60px;
 }
 
 .feature-item .left-icon img {
   float: left;
-  margin-right: 30px;
+  margin-right: 2em;
 }
 
 .feature-item .right-content {

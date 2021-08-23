@@ -22,15 +22,21 @@
                                 <div class="left-icon">
                                     {% if tutor.img_link %}
                                         <img src="{{ tutor.img_link }}" alt="{{ tutor.l_name }}_аватар">
-                                    {% elif tutor.avatar %}
-                                        <img src="{{ tutor.avatar }}" alt="{{ tutor.l_name }}_аватар">
                                     {% else %}
                                         <img src="https://www.100ballov.by/media/django-summernote/2021-08-23/7043d218-16f1-4d13-8152-e4b85320bc78.png" alt="{{ tutor.l_name }}_аватар">
                                     {% endif %}
                                 </div>
                                 <div class="right-content">
                                     <h4>{{ tutor.f_name }} {{ tutor.l_name }}</h4>
-                                    <p>{{ tutor.subject }}</p>
+
+                                    <p>Предметы:
+                                        {% for s in tutor.subject.all %}
+                                            {{ s }}
+                                        {% endfor %}
+                                    </p>
+
+
+
                                     <a href="#" class="text-button">Узнать больше</a>
                                 </div>
                             </li>
