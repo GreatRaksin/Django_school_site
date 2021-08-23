@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from .models import Tutor
+from .models import Tutor, Features
 from .forms import TutorSelectForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html', {'title': 'Z'})
+    features = Features.objects.filter(is_active=True)
+    return render(request, 'index.html', {'title': 'Занятия по школьной программе в 100 баллов',
+                                          'features': features})
 
 
 def tutors(request):

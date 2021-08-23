@@ -74,7 +74,7 @@ class Features(models.Model):
                             default='static/site/images/tutor_default.jpg',
                             upload_to='icons_features')
     title = models.CharField('Фишка', max_length=100, blank=True, null=True, db_index=True)
-    text = models.CharField('Текст фишки', max_length=300, blank=True, null=True, db_index=True)
+    text = models.TextField('Текст фишки', max_length=300, blank=True, null=True, db_index=True)
     is_active = models.BooleanField('Активно', db_index=True, blank=True, null=True, default=False)
 
     class Meta:
@@ -83,5 +83,5 @@ class Features(models.Model):
         verbose_name_plural = 'Фишки'
 
     def __str__(self):
-        return self.name
+        return self.title
 
