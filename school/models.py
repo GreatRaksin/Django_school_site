@@ -86,3 +86,22 @@ class Features(models.Model):
     def __str__(self):
         return self.title
 
+
+class Lessons(models.Model):
+    subject = models.ForeignKey('Subjects', verbose_name='Предмет', on_delete=models.CASCADE)
+    tutor = models.ForeignKey('Tutor', verbose_name='Учитель', on_delete=models.CASCADE)
+    office = models.ForeignKey('Offices', verbose_name='Филиал', on_delete=models.CASCADE)
+    day = models.CharField('День проведения', max_length=50, null=True)
+    time = models.TimeField('Время проведения', default='10:00')
+    is_active = models.BooleanField('Активно', db_index=True, blank=True, null=True, default=False)
+    forms = models.CharField('Классы', max_length=10, null=True)
+    link = models.URLField('Ссылка на запись', max_length=300, db_index=True, blank=True, null=True)
+
+    class Meta:
+        ordering = ['subject', 'day']
+        verbose_name = 'Занятие'
+        verbose_name_plural = 'Занятия'
+
+    def __str__(self):
+        return f'{self.subject} {self.tutor.l_name} {self.day} {self.time}'
+
