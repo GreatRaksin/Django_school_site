@@ -87,7 +87,6 @@ class Features(models.Model):
     def __str__(self):
         return self.title
         
- 
 
 class Forms(models.Model):
     form = models.IntegerField('Класс')
@@ -107,6 +106,7 @@ class Lessons(models.Model):
     office = models.ForeignKey('Offices', verbose_name='Филиал', on_delete=models.CASCADE)
     day = models.CharField('День проведения', max_length=50, null=True)
     time = models.TimeField('Время проведения', default='10:00')
+    duration = models.CharField('Продолжительность:', max_length=10, default='45 минут')
     is_active = models.BooleanField('Активно', db_index=True, blank=True, null=True, default=False)
     forms = models.ManyToManyField('Forms', verbose_name='Класс', related_name='Классы')
     link = models.URLField('Ссылка на запись', max_length=300, db_index=True, blank=True, null=True)
