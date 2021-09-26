@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-from tinymce.models import HTMLField
+from tinymce import models as tinymce_models
 from django.utils import timezone
 import os
 
@@ -75,16 +75,30 @@ class Features(models.Model):
                             default='static/site/images/tutor_default.jpg',
                             upload_to='icons_features')
     title = models.CharField('Фишка', max_length=100, blank=True, null=True, db_index=True)
-    text = HTMLField('Текст фишки', max_length=10000, blank=True, null=True, db_index=True)
+    order = models.IntegerField('Порядковый номер отображения', default=9)
+    text = tinymce_models.HTMLField('Текст фишки', max_length=7000, blank=True, null=True, db_index=True)
     is_active = models.BooleanField('Активно', db_index=True, blank=True, null=True, default=False)
 
     class Meta:
-        ordering = ['title']
+        ordering = ['order', 'title']
         verbose_name = 'Фишка'
         verbose_name_plural = 'Фишки'
 
     def __str__(self):
         return self.title
+        
+ 
+
+class Forms(models.Model):
+    form = models.IntegerField('Класс')
+
+    class Meta:
+        ordering = ['form',]
+        verbose_name = 'Класс'
+        verbose_name_plural = 'Классы'
+
+    def __str__(self):
+        return f'{self.form} класс'
 
 
 class Lessons(models.Model):
@@ -94,8 +108,9 @@ class Lessons(models.Model):
     day = models.CharField('День проведения', max_length=50, null=True)
     time = models.TimeField('Время проведения', default='10:00')
     is_active = models.BooleanField('Активно', db_index=True, blank=True, null=True, default=False)
-    forms = models.CharField('Классы', max_length=10, null=True)
+    forms = models.ManyToManyField('Forms', verbose_name='Класс', related_name='Классы')
     link = models.URLField('Ссылка на запись', max_length=300, db_index=True, blank=True, null=True)
+    description = tinymce_models.HTMLField('Описание курса', max_length=7000, default='Описание курса появится позже. Следите за обновлениями.')
 
     class Meta:
         ordering = ['subject', 'day']
@@ -104,4 +119,3 @@ class Lessons(models.Model):
 
     def __str__(self):
         return f'{self.subject} {self.tutor.l_name} {self.day} {self.time}'
-

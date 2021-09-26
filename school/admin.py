@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import CheckboxSelectMultiple
-from .models import Head, Tutor, Offices, Subjects, Features, Lessons
+from .models import Head, Tutor, Offices, Subjects, Features, Lessons, Forms
 
 # Register your models here.
 class HeadAdmin(admin.ModelAdmin):
@@ -21,12 +21,18 @@ class SubjectAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 class FeatureAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_active',)
-
+    list_display = ('title', 'is_active', 'order')
+    
 class LessonAdmin(admin.ModelAdmin):
     list_display = ('subject', 'day', 'time', 'is_active',)
     list_filter = ('office', 'is_active', 'tutor')
+    formfield_overrides = {
+        models.ManyToManyField: {'widget': CheckboxSelectMultiple},
+    }
 
+
+class FormsAdmin(admin.ModelAdmin):
+    list_display = ('form',)
 
 
 admin.site.register(Head, HeadAdmin)
@@ -35,3 +41,4 @@ admin.site.register(Offices, OfficeAdmin)
 admin.site.register(Subjects, SubjectAdmin)
 admin.site.register(Features, FeatureAdmin)
 admin.site.register(Lessons, LessonAdmin)
+admin.site.register(Forms, FormsAdmin)
