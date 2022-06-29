@@ -4,16 +4,20 @@
 {% block content %}
     <div class="clearfix"></div>
     <!-- ***** Features Item Start ***** -->
-    <section class="section" id="news">
-        <div class="container">
+    <section class="section" id="call-to-action">
+        <div class="container" id="contacts">
             <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cta-content">
                         <h2>Новости <em>школы</em></h2>
                         <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section" id="news">
+        <div class="container">
             <div class="row justify-content-around">
                 {% for post in posts %}
                     <div class="card my-2" style="width: 80%;">
