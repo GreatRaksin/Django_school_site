@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="section" id="call-to-action">
+        <div class="container" id="contacts">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="cta-content">
+                        <h2><em>{{ post.title }}</em><br><span style="font-size: 0.4em;">{{ post.created_date }}</span></h2>
+                        <h6><a href="{% url 'blog' %}" class="btn btn-outline-danger mt-3">Назад</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">{{ post.text|safe }}
+                    <a href="{% url 'blog' %}" class="btn btn-outline-danger">Назад</a></div>
+            </div>
+
+    </section>
+{% endblock %}

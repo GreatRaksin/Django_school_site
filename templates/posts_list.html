@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="clearfix"></div>
+    <!-- ***** Features Item Start ***** -->
+    <section class="section" id="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Новости <em>школы</em></h2>
+                        <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                {% for post in posts %}
+                    <div class="card my-2" style="width: 80%;">
+                        <div class="card-header">
+                            {{ post.created_date }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.annotation|safe }}</p>
+                            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-outline-danger">Полный текст</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+    <!-- ***** Features Item End ***** -->
+{% endblock %}
