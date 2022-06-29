@@ -5,7 +5,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="Частная школа в Минске приглашает учеников 5-11 классов. Мы собрали ведущих преподавателей!">
+    <meta name="keywords" content="частная школа, частная школа Минск, частная школа в Минске, частные школы, частная школа 100 баллов, частная школа апельсин"/>
+    <meta name="google-site-verification" content="mapjfFgeZLUHhG6nisxhLaE54jrxWcz_Et8076X15yM" />
+    <meta name="yandex-verification" content="7c6d294ac2ede0f6" />
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
           rel="stylesheet">
@@ -14,9 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
     {% if title %}
-        <title>{{ title }} | 100 баллов</title>
+        <title>{{ title }}</title>
     {% else %}
-        <title>Школьная программа | 100 баллов</title>
+        <title>Частная школа в Минске"Апельсин-100 баллов"</title>
     {% endif %}
 
     <!-- Additional CSS Files -->
@@ -24,7 +27,33 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'site/css/font-awesome.css' %}">
 
-    <link rel="stylesheet" href="{% static 'site/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'site/css/main.css' %}?{% now 'u'='' %}">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8EVDED0X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E8EVDED0X1');
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(89310017, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/89310017" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 </head>
 
@@ -50,16 +79,18 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="{% url 'index' %}" class="logo">100<em> Баллов</em></a>
+                    <a href="{% url 'index' %}" class="logo" style="float: none;"><img style="max-width: 160px;" src="{% static 'site/images/logo.svg' %}"></a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{% url 'index' %}#top" class="active">Главная</a></li>
                         <li class="scroll-to-section"><a href="{% url 'index' %}#features">О нас</a></li>
                         <li class="scroll-to-section"><a href="{% url 'tutors' %}#tutors">Преподаватели</a></li>
+                        <!--<li class="scroll-to-section"><a href="{% url 'index' %}#">Стоимость</a></li>-->
                         <li class="scroll-to-section"><a href="{% url 'dop' %}#active">Доп. занятия</a></li>
                         <li class="scroll-to-section"><a href="{% url 'index' %}#contacts">Контакты</a></li>
-                        <li class="main-button"><a href="{% url 'index'%}#contacts">Записаться</a></li>
+                        
+                        <li class="scroll-to-section"><a href="{% url 'index'%}#reg" title="Частная школа в Минске, регистрация">Регистрация</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>

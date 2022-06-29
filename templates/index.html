@@ -2,99 +2,194 @@
 {% load static %}
 
 {% block content %}
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="main-banner" id="top">
-        <img src="{% static 'site/images/bg.jpg' %}" alt="" id="bg-video">
+<!-- ***** Main Banner Area Start ***** -->
+<div class="main-banner" id="top">
+    <img src="{% static 'site/images/bg.jpg' %}" alt="" id="bg-video">
 
-        <div class="video-overlay header-text">
-            <div class="caption">
-                <h6>Новый образовательный проект</h6>
-                <h2>ШКОЛЬНАЯ ПРОГРАММА В <em>"100 БАЛЛОВ"</em></h2>
-                <div class="main-button scroll-to-section">
-                    <a href="#features">Become a member</a>
+    <div class="video-overlay header-text">
+        <div class="caption">
+            <h6><span style="font-size: 1.8em">Средняя школа "Апельсин"</span><br><span style="font-size: 1.3em">Образовательный центр "100 баллов" (партнер)</span></h6>
+            <h1><em>ЧАСТНАЯ ШКОЛА В МИНСКЕ</em></h1>
+            <h6><span style="font-size: 1.4em">Открываем набор на 2022-2023 учебный год!</span></h6>
+            <div class="main-button scroll-to-section mt-4">
+                <a href="#reg" title="Частная школа в Минске, регистрация">Записаться</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+
+<!-- ***** Features Item Start ***** -->
+<section class="section" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Информация <em>о школе</em></h2>
+                    <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
+
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                {% for feature in features %}
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center"><h1 style="font-size: 1em"><b>{{ feature.title }}</b></h1></div>
+                    <div class="card-body">
+                        <p>{{ feature.text|safe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Item End ***** -->
+
+<section class="section" id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Другие проекты<br><em>Школы "Апельсин"</em></h2>
+                    <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
+                </div>
+            </div>
+            
+            <div class="row justify-content-around">
+                
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center">
+                        <b>Детский сад и начальная школа <a href="https://apelsin.by" target="_blank">здесь</a></b>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Детский сад и начальная школа находятся в а.г.Сеница, Богдановича,3.</b></p>
+                    </div>
+                </div>
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center">
+                        <b>Средняя школа <a href="https://apelsin.by/services/srednaya-shkola.html" target="_blank">здесь</a></b>
+                    </div>
+                    <div class="card-body">
+                        <p><b>5-8 классы средней школы на Киселева, 38.</b></p>
+                    </div>
+                </div>
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center">
+                        <b>Летний лагерь <a href="https://apelsin.by/services/lager.html" target="_blank">здесь</a></b>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Мы организовали летний лагерь для детей 4-10 лет! Ознакомьтсь с подробной информацией и проведите лето незабываемо!</b></p>
+                    </div>
+                </div> 
+                
+            </div> 
+            
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="section" id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Другие проекты<br><em>Центра "100 баллов"</em></em></h2>
+                    <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
+                </div>
+            </div>
+            <div class="row justify-content-around">
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center">
+                        <b>Репетиторство <a href="https://100ballov.by" target="_blank">здесь</a></b>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Подготовка к ЦТ (10-11 классы), помощь в изучении школьной программы (5-10 классы),
+                            английский язык.</b></p>
+                    </div>
+                </div>
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center">
+                        <b>STEAM-предметы <a href="http://stem.100ballov.by" target="_blank">здесь</a></b>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Логика, робототехника, программирование, искусство и английский язык для школьников 1-11
+                            классов.</b></p>
+                    </div>
+                </div>
+                <div class="card border-white mx-auto mb-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="card-header text-danger text-center">
+                        <b>Дистанционные занятия <a href="http://100ballov.college" target="_blank">здесь</a></b>
+                    </div>
+                    <div class="card-body">
+                        <p><b>В нашем центре предусмотерена возможность заниматься дистанционно.</b></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ***** Main Banner Area End ***** -->
+</section>
 
-    <!-- ***** Features Item Start ***** -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2>Информация <em>об обучени</em></h2>
-                        <img src="{% static 'site/images/line-dec.png' %}" alt="waves">
-                        <p>Изучите наши правила прежде, чем принять решение</p>
-                    </div>
-                </div>
-                <div class="row justify-content-around">
-                    {% for feature in features %}
-                        <div class="card border-light mb-3 col-lg-3 col-md-3 col-sm-5">
-                            <div class="card-header text-danger text-center"><b>{{ feature.title }}</b></div>
-                            <div class="card-body">
-                                <p>{{ feature.text|safe }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
+<hr>
+
+<!-- ***** Call to Action Start ***** -->
+<section class="section" id="call-to-action">
+    <div class="container" id="contacts">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <h2>Контактная <em>информация</em></h2>
+                    <p>Вы можете задать свои вопросы, написав нам в Viber или Telegram.
+                        Также вы можете заполнить форму регистрации, и мы сами свяжемся с вами.</p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ***** Features Item End ***** -->
 
-    <!-- ***** Call to Action Start ***** -->
-    <section class="section" id="call-to-action">
-        <div class="container" id="contacts">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="cta-content">
-                        <h2>Контактная <em>информация</em></h2>
-                        <p>Вы можете задать свои вопросы, написав нам в Viber или Telegram.
-                            Также вы можете заполнить форму регистрации и мы сами свяжемся с вами.</p>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="card h-100">
+                    <div class="card-header">Контакты</div>
+                    <div class="card-body">
+                    
+                        <h4 style="color: #212529;">Время работы кураторов:</h4>
+                        <p style="font-size: 1.2em;">будние дни, <b>с 9:00 до 16:00</b></p>
+
+                        <hr>
+                        <p style="font-size: 1.2em;"><b>Телефон для связи:</b></p>
+                        <p style="font-size: 1.2em;">+375 44 76 55 100 <br>Обращаем ваше внимание: для улучшения точности предоставляемой информации все телефонные разговоры записываются!</p>
+                        <hr>
+                        
+                        <p style="font-size: 1.2em;"><b>Мы готовы оперативно отвечать на все ваши вопросы. Пишите:</b></p>
+                        <p style="font-size: 1.2em;">Viber, Telegram:</p> 
+                        <ul>
+                                <li><b>+375 44 754 88 51</b> - ул. Бельского 15,</li>
+                                <li><b>+375 29 119 21 00</b> - ул. Красная 7,</li>
+                        </ul>
+                        <p style="font-size: 1.2em;"><b>письмом на электронный адрес</b>: <a href="mailto:school@100ballov.by">school@100ballov.by</a>.</p>
+                        </ul>
+
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A183bf4ec51e8c69a7928cb7849f639655678059f1aceab66deb1462d77351461&amp;width=100%&amp;height=386&amp;lang=ru_RU&amp;scroll=true"></script>
+
+
                     </div>
+
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="card h-100">
-                        <div class="card-header">Контакты</div>
-                        <div class="card-body">
-                            
-                            <h1 style="color: #212529;">Время работы:</h1>
-                            <p style="font-size: 1.2em;">будние дни, <b>с 9:00 до 16:00</b></p>
-
-                            <hr>
-                            <p style="font-size: 1.2em;"><b>Пожалуйста, просим вопросы и информацию присылать в Viber или Telegram:</b></p>
-                            <ul style="font-size: 1.2em;">
-                                <li>+375 44 754 88 51 - ул. Бельского 15 </li>
-                                <li>+375 29 11 92 100 - ул. Красная 7</li>
-                                <li>+375 29 37 98 100 - ул. Толбухина 2 </li>
-                            </ul>
-                            <hr>
-
-                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A183bf4ec51e8c69a7928cb7849f639655678059f1aceab66deb1462d77351461&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-                            
-                            
-                        </div>
-
-                    </div>
+            <div class="col-lg-6 col-md-6 col-xs-12" id="reg">
+                <div class="cta-content">
+                    <h2>Регистрация!</h2>
+                    <p>Заполните форму регистрации, и наши кураторы свяжутся с вами!</p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-xs-12">
-                    <div class="cta-content">
-                        <h2>Регистрация!</h2>
-                        <p>Заполните форму регистрации и наши кураторы свяжутся с вами!</p>
-                    </div>
-                    <div class="contact-form">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe2iML5B6UneCW_yGSq-agpypWTNov1Oz1k-X9AQu9Oawqkjw/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Загрузка...
-      </iframe>
-                    </div>
+                <div class="contact-form">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe2iML5B6UneCW_yGSq-agpypWTNov1Oz1k-X9AQu9Oawqkjw/viewform?embedded=true"
+                            width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Загрузка...
+                    </iframe>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ***** Contact Us Area Ends ***** -->
+    </div>
+</section>
+<!-- ***** Contact Us Area Ends ***** -->
 
 {% endblock %}
